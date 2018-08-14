@@ -11,20 +11,18 @@ bandit.
 2. Install required packages<br/>
 ```pip3 install -r requirements.txt```
 3. Edit the 'Experiment Variable' lists<br/>
-ex.
 ```
-EPSILONS = [0, 0.1, 0.2]<br/>
-INITIALS = [0]<br/>
-ALPHAS = [None]<br/>
+EPSILONS = [0, 0.1, 0.2]
+INITIALS = [0, 1, 5]
+ALPHAS = [None, 0.1, 0.2]
 ```
-4. Run
-```python3 main.py```
+4. Run `python3 main.py`
 
 ## Pre-made results
 
 Some interesting results using the script were run and the graphs saved.
-The default values for each variable were Epsilon = 0.1, Initial = 0, 
-and Alpha = None (for sample-average update method). Unless otherwise
+The default values for each variable were `Epsilon = 0.1`, `Initial = 0`, 
+and `Alpha = None` (for sample-average update method). Unless otherwise
 noted, 2000 trials were performed for 1000 episodes, with a stationary
 problem.
 
@@ -44,7 +42,7 @@ should be treated as such.
 
 These results suggest that higher epsilon values generally increase the
 probability that the bandit will find the optimal policy in early episodes.
-However, too high of an epsilon (e.g. Epsilon = 1) slightly decreases the
+However, too high of an epsilon (e.g. `Epsilon = 1`) slightly decreases the
 probability the bandit will find the optimal policy. Furthermore, lower
 epsilon values (e.g. 0.05) keep pace with higher epsilon values (e.g. 0.5)
 with regards to average reward in early episodes, and then outperform 
@@ -91,8 +89,8 @@ rewards as the episode number increased.
 ### Changing Epsilon
 (These tests were done with `Alpha = 0.1` for 4000 episodes)
 
-*[epsilon-ns-reward.png](results/epsilon-ns-reward.png)
-*[epsilon-ns-optimal.png](results/epsilon-ns-optimal.png)
+* [epsilon-ns-reward.png](results/epsilon-ns-reward.png)
+* [epsilon-ns-optimal.png](results/epsilon-ns-optimal.png)
 
 These results are strikingly similar to the stationary problem. As before,
 higher epsilons (below 1.0), tend to increase the probability that the
@@ -120,4 +118,4 @@ in checking if the max arg changed, to avoid recalculation
 This script and the experiment are largely inspired by the book 
 "Reinforcement Learning: An Introduction" by Richard Sutton and 
 Andrew Barto. A pdf version can be found online 
-(here)[http://incompleteideas.net/book/bookdraft2017nov5.pdf]. 
+[here](http://incompleteideas.net/book/bookdraft2017nov5.pdf). 
